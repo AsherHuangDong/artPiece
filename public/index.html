@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <script>
+    // 后台返回token无效，防止多次弹出提示框的flag
+    localStorage.setItem('noTokenSkipToLogin', '1')
+    // 动态域名配置
+    const a = window.location.origin
+    // http://test111www.chaindown.com
+    let b = ''
+    let c = ''
+    if (a === 'https://testweb.artpiece.com') {
+      b = 'https://testwebapi.artpiece.com'
+      c = 'wss://testws.artpiece.com/kline-api/ws'
+    } else {
+      b = 'http://test111webapi.chaindown.com'
+      c = 'ws://test111ws.chaindown.com/kline-api/ws'
+    }
+    window.selfConfig = {
+      baseUrl: a,
+      chainUrl: b,
+      wsUrl: c,
+      connectUs: 'https://chainup52.zendesk.com/hc/language/articles/360038571731',
+      aboutUs: 'https://chainup52.zendesk.com/hc/language/articles/360038571751',
+      policy: 'https://chainup52.zendesk.com/hc/language/articles/360038191852',
+      notice: 'https://chainup52.zendesk.com/hc/language/sections/360007582652-%E5%85%AC%E5%91%8A',
+      news: 'https://chainup52.zendesk.com/hc/language/sections/360007678531-%E6%96%B0%E9%97%BB'
+      // connectUs: 'https://chainup52.zendesk.com/hc/zh-cn/articles/360038571731',
+      // aboutUs: 'https://chainup52.zendesk.com/hc/zh-cn/articles/360038571751',
+      // policy: 'https://chainup52.zendesk.com/hc/zh-cn/articles/360038191852',
+      // notice: 'https://chainup52.zendesk.com/hc/zh-cn/sections/360007582652-%E5%85%AC%E5%91%8A',
+      // news: 'https://chainup52.zendesk.com/hc/zh-cn/sections/360007678531-%E6%96%B0%E9%97%BB'
+    }
+  </script>
+  <style>
+    .pointer:hover {
+      cursor: pointer;
+    }
+  </style>
+  <script src="charting_library/charting_library.min.js"></script>
+  <script src="static/jstz.js"></script>
+  <title>ArtPiece</title>
+</head>
+<body style="overflow-x: visible !important;">
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>

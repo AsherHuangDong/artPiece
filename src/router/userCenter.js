@@ -1,0 +1,78 @@
+export default {
+  path:'/userCenter',
+  name:'userCenter',
+  redirect: '/account',
+  component:()=>import("../components/page/userCenter/header"),
+  children: [
+    {
+      path:'/account',
+      name:'account',
+      component:()=>import("../components/page/userCenter/account"),
+      children: [
+        {
+          path:'/account',
+          name:'account',
+          component:()=>import("../components/page/userCenter/index")
+        },
+        {
+          path:'/account/loginPassword',
+          name:'loginPassword',
+          component:()=>import("../components/page/userCenter/loginPassword")
+        },
+        {
+          path:'/account/paymentPassword',
+          name:'paymentPassword',
+          component:()=>import("../components/page/userCenter/paymentPassword")
+        },
+        {
+          path:'/account/movileAssociated',
+          name:'movileAssociated',
+          component:()=>import("../components/page/userCenter/movileAssociated")
+        },
+        {
+          path:'/account/identityVerify',
+          name:'identityVerify',
+          component:()=>import("../components/page/userCenter/identityVerify")
+        },
+        {
+          path:'/account/googleAuthentication',
+          name:'googleAuthentication',
+          component:()=>import("../components/page/userCenter/googleAuthentication")
+        },
+        {
+          path:'/account/cancelGoogleAuthentication',
+          name:'cancelGoogleAuthentication',
+          component:()=>import("../components/page/userCenter/cancelGoogleAuthentication")
+        },
+        {
+          path:'/account/proofAddress',
+          name:'proofAddress',
+          component:()=>import("../components/page/userCenter/proofAddress")
+        },
+        {
+          path:'/account/changePhone',
+          name:'changePhone',
+          component:()=>import("../components/page/userCenter/changePhone")
+        },
+        {
+          path:'/account/cancelPhone',
+          name:'cancelPhone',
+          component:()=>import("../components/page/userCenter/cancelPhone")
+        }
+      ]
+    },
+    {
+      path:'/safetyRecord',
+      name:'safetyRecord',
+      redirect: '/safetyRecord/loginHistory',
+      component:()=>import("../components/page/userCenter/safetyRecord"),
+      children: [
+        {
+          path:'/safetyRecord/loginHistory',
+          name:'loginHistory',
+          component:()=>import("../components/page/userCenter/loginHistory")
+        }
+      ]
+    }
+  ]
+}
