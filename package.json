@@ -13,7 +13,7 @@
     "countries-list": "^2.5.0",
     "echarts": "^4.3.0",
     "iview": "^3.5.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lightweight-charts": "^1.2.1",
     "node-sass": "^4.13.0",
     "pako": "^1.0.10",
